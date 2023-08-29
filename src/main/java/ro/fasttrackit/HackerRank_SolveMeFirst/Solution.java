@@ -1,10 +1,6 @@
-package ro.fasttrackit.HackerRank1;
+package ro.fasttrackit.HackerRank_SolveMeFirst;
 
-import java.io.*;
 import java.util.*;
-import java.text.*;
-import java.math.*;
-import java.util.regex.*;
 
 public class Solution {
 

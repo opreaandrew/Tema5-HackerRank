@@ -1,14 +1,9 @@
-package ro.fasttrackit.HackerRank5;
+package ro.fasttrackit.HackerRank_DiagonalDifference;
 
 import java.io.*;
-import java.math.*;
-import java.security.*;
-import java.text.*;
 import java.util.*;
-import java.util.concurrent.*;
-import java.util.function.*;
-import java.util.regex.*;
 import java.util.stream.*;
+
 import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
@@ -23,7 +18,25 @@ class Result {
 
     public static int diagonalDifference(List<List<Integer>> arr) {
         // Write your code here
+        int firstDiagonal = 0;
+        int secondDiagonal = 0;
 
+        for (int i = 0; i < arr.size(); i++) {
+            for (int j = 0; j < arr.get(i).size(); j++) {
+                if (i == j) {
+                    firstDiagonal += arr.get(i).get(j);
+                }
+            }
+        }
+
+        for (int i = arr.size() - 1; i >= 0; i--) {
+            for (int j = 0; j < arr.get(i).size(); j++) {
+                if ((i + j) == arr.get(i).size() - 1) {
+                    secondDiagonal += arr.get(i).get(j);
+                }
+            }
+        }
+        return Math.abs(firstDiagonal - secondDiagonal);
     }
 
 }
