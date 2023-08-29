@@ -26,16 +26,18 @@ class Result {
 
     public static List<Integer> compareTriplets(List<Integer> a, List<Integer> b) {
         List<Integer> score = new ArrayList<>();
-        score.get(0) = 0;
-        score.get(1) = 0;
+        int alice = 0;
+        int bob = 0;
 
         for (int i = 0; i < 3; i++) {
             if (a.get(i) > b.get(i)) {
-                score.get(0)++;
+                alice++;
             } else if (a.get(i) < b.get(i)) {
-                score.add(1)++;
+                bob++;
             }
         }
+        score.add(alice);
+        score.add(bob);
         return score;
     }
 
